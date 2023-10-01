@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Table Creation Form</title>
+</head>
+<body>
+
+    <div id="addTable">
+        <button type="button" class="btn btn-info"> Add Table</button>
+    </div>
+
+    <div id="addRecords" style="display:none">
+        <button type="text" class="btn btn-success"> Add Record</button>
+    </div>
+  
+    <div id="dialog" style="display:none">
+
+        <form action="/createTable" method="post">
+          <label for="tableName">Table Name:</label>
+          <input type="text" id="tableName" name="tableName" required><br><br>
+      
+          <div id="fieldInputs">
+      
+          </div>
+          
+      
+      
+          <a href="#" id="addFieldLink">Add Table Fields</a><br><br>
+      
+          <input type="button" value="Create Table" id="submitButton">
+        
+        </form>
+
+    </div>
+
+
+  <div id="result"></div>
+
+</body>
+
+<script src="index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</html>
+
+<style>
+    /* Styling for the form container */
+    #dialog {
+      display: none;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      max-width: 400px;
+      margin: 0 auto;
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    #dialog.visible {
+      display: block;
+      transform: translateY(0);
+      opacity: 1;
+    }
+  </style>
